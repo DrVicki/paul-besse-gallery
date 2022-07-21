@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Slider</title>
+    <style type="text/css">
+        header {
+            background: darkblue;
+            font-size: 40px;
+            padding: 30px;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+        
+        header h2 {
+            margin-top: 20;
+            color: white;
+        }
+        
+        h3 {
+            margin-top: 20;
+            padding-left: 560px;
+            color: darkblue;
+            font-size: 30px;
+        }
+        
+        body {
+            margin: 0;
+            background: #e6e6e6;
+        }
+        
+        .showSlide {
+            display: none
+        }
+        
+        .showSlide img {
+            width: 100%;
+        }
+        
+        .slidercontainer {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+        
+        .left,
+        .right {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+        
+        .right {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .left:hover,
+        .right:hover {
+            background-color: rgba(115, 115, 115, 0.8);
+        }
+        
+        .content {
+            color: #ffffff;
+            font-size: 20px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 1px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .active {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        footer {
+            text-align: right;
+            padding: 5px;
+            padding-bottom: 20px;
+            padding-right: 40px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            background-color: white;
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="header text">Paul Besse Gallery</h2>
+    </header>
+    <div id="month">
+        <h3>JULY 2022</h3>
+    </div>
+    <div class="slidercontainer">
+        <div class="showSlide fade">
+            <img src="images/dorothy-frame.jpeg" />
+            <div class="content">Dorothy and Toto | July 14, 2022</div>
+        </div>
+        <div class="showSlide fade">
+            <img src="images/looking-at-you.jpeg" />
+            <div class="content">Looking at You Kid | July 14, 2022</div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/clear-mountain.jpeg" />
+            <div class="content">Clear Mountain Stream | July 13 2022</div>
+        </div>
+        <div class="showSlide fade">
+            <img src="images/seahorse-frame.jpeg" />
+            <div class="content">Gators in Brownwood | July 12, 2022 </div>
+        </div>
+        <div class="showSlide fade">
+            <img src="images/montana-frame.jpeg" />
+            <div class="content">Greetings from Montana | July 11, 2022 </div>
+        </div>
+        <div class="showSlide fade">
+            <img src="images/red-baron-frame.jpeg" />
+            <div class="content">Red Baron | July 10, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/wind-and-turbines-frame.jpeg" />
+            <div class="content">Wind and Turbines | July 9, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/tulips-frame.jpeg" />
+            <div class="content">Tulips on the Beach | July 8, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/hitch-a-r-de.jpeg" />
+            <div class="content">Hitch A Ride | July 7, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/wild-flower-on-7-mile-beach.jpeg" />
+            <div class="content">Wild Flower on 7 Mile Beach | July 6, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/orchid-in-a-farmers-field.jpeg" />
+            <div class="content">Orchid in a Farmers Field | July 5, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/4th-of-July.jpeg" />
+            <div class="content">4th Of July | July 4, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/hibiscus-on-mountain-lake.jpeg" />
+            <div class="content">Hibiscus on a Mountain Lake | July 3, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/red-white-blue-tophat.jpeg" />
+            <div class="content">Red White and Blue Tophat | July 2, 2022 </div>
+        </div>
+
+        <div class="showSlide fade">
+            <img src="images/very-happy-dog.jpeg" />
+            <div class="content">Very Happy Dog | July 1, 2022 </div>
+        </div>
+
+        <!-- Navigation arrows -->
+        <a class="left" onclick="nextSlide(-1)">❮</a>
+        <a class="right" onclick="nextSlide(1)">❯</a>
+    </div>
+
+    <footer>
+        <h2>Created by: Dr. Vicki Bealman</h2>
+
+        <a href="https://www.vickibealmanstudio.org/">Visit Vicki Bealman Studio!</a>
+
+
+    </footer>
+
+
+
+
+    <script type=" text/javascript ">
+        var slide_index = 1;
+        displaySlides(slide_index);
+
+        function nextSlide(n) {
+            displaySlides(slide_index += n);
+        }
+
+        function currentSlide(n) {
+            displaySlides(slide_index = n);
+        }
+
+        function displaySlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("showSlide ");
+            if (n > slides.length) {
+                slide_index = 1
+            }
+            if (n < 1) {
+                slide_index = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none ";
+            }
+            slides[slide_index - 1].style.display = "block ";
+        }
+    </script>
+
+</body>
+
+</html>
